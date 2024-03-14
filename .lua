@@ -19,10 +19,10 @@ local g = {
 }
 
 local poslist = {
-  save = Vector3.new(16,324,-22),
+  save = CFrame.new(16,324,-22),
   parkour = {
-    VIP = Vector3.new(-88,67,-287),
-    Normal = Vector3.new(34,70,-461)
+    VIP = CFrame.new(-88,67,-287),
+    Normal = CFrame.new(34,70,-461)
   }
 }
 
@@ -49,7 +49,7 @@ T1:Toggle("Save place",false,function(value)
     g.place = value
     while wait() do
       if g.place == false then break end
-      self.Character.HumanoidRootPart.Position = poslist.save
+      self.Character.HumanoidRootPart.CFrame = poslist.save
     end
 end)
 
