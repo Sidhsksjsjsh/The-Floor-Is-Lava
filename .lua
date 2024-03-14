@@ -81,7 +81,7 @@ T1:Toggle("Auto spin",false,function(value)
     end
 end)
 
-T3:Toggle("Vote '1'",false,function(value)
+local mv1 = T3:Toggle("Vote '1'",false,function(value)
     g.v1 = value
     while wait() do
       if g.v1 == false then break end
@@ -89,7 +89,7 @@ T3:Toggle("Vote '1'",false,function(value)
     end
 end)
 
-T3:Toggle("Vote '2'",false,function(value)
+local mv2 = T3:Toggle("Vote '2'",false,function(value)
     g.v2 = value
     while wait() do
       if g.v2 == false then break end
@@ -97,10 +97,16 @@ T3:Toggle("Vote '2'",false,function(value)
     end
 end)
 
-T3:Toggle("Vote '3'",false,function(value)
+local mv3 = T3:Toggle("Vote '3'",false,function(value)
     g.v3 = value
     while wait() do
       if g.v3 == false then break end
       game:GetService("ReplicatedStorage")["Voting"]["map3_trigger"]:FireServer()
     end
+end)
+
+lib:runtime(function()
+    mv1:EditText("Vote '" .. self["PlayerGui"]["Voting"]["Background"]["map1"]["name_of_map"]["Text"] .. "'")
+    mv2:EditText("Vote '" .. self["PlayerGui"]["Voting"]["Background"]["map2"]["name_of_map"]["Text"] .. "'")
+    mv3:EditText("Vote '" .. self["PlayerGui"]["Voting"]["Background"]["map3"]["name_of_map"]["Text"] .. "'")
 end)
