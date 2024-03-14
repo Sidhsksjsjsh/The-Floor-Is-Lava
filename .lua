@@ -18,12 +18,6 @@ local g = {
   bring = false
 }
 
---[[
-save: 16, 324, -22
-VIP parkour: -88, 67, -287
-Parkour: 34, 70, -461
-]]
-
 local poslist = {
   save = Vector3.new(16,324,-22),
   parkour = {
